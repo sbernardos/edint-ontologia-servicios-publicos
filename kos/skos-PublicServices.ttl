@@ -1,0 +1,368 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintkossertype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/PublicServicesType/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+
+
+#################################################################
+# Concept scheme
+#################################################################
+
+edintkos:PublicServicesType
+    a skos:ConceptScheme ;
+    dct:issued "2026-05-11"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    skos:prefLabel "Tipos de servicios públicos"@es ;
+    skos:prefLabel "Public service types"@en ;
+    dct:description "Vocabulario controlado para clasificar servicios públicos municipales."@es ;
+    dct:title "Esquema de conceptos agrupando tipos de Servicios Municipales"@es .
+    
+
+#################################################################
+# Top concepts
+#################################################################
+
+edintkossertype:seguridadEmergencias
+    a skos:Concept ;
+    skos:prefLabel "Seguridad y emergencias"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:residuosLimpiezaUrbana
+    a skos:Concept ;
+    skos:prefLabel "Residuos y limpieza urbana"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:aguaSaneamiento
+    a skos:Concept ;
+    skos:prefLabel "Agua y saneamiento"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:serviciosSociales
+    a skos:Concept ;
+    skos:prefLabel "Servicios sociales"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:atencionCiudadana
+    a skos:Concept ;
+    skos:prefLabel "Atención ciudadana"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:movilidadTransporte
+    a skos:Concept ;
+    skos:prefLabel "Movilidad y transporte"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:alumbradoPublico
+    a skos:Concept ;
+    skos:prefLabel "Alumbrado público"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:mantenimientoUrbano
+    a skos:Concept ;
+    skos:prefLabel "Mantenimiento urbano y vía pública"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:edificiosDependenciasMunicipales
+    a skos:Concept ;
+    skos:prefLabel "Edificios y dependencias municipales"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:administracionGeneral
+    a skos:Concept ;
+    skos:prefLabel "Administración general"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:urbanismoObras
+    a skos:Concept ;
+    skos:prefLabel "Urbanismo y obras"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:serviciosFunerariosCementerio
+    a skos:Concept ;
+    skos:prefLabel "Servicios funerarios y cementerio"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:proteccionAnimal
+    a skos:Concept ;
+    skos:prefLabel "Protección animal"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+edintkossertype:tecnologiasInformacion
+    a skos:Concept ;
+    skos:prefLabel "Tecnologías de la información"@es ;
+    skos:inScheme edintkos:PublicServicesType ;
+    skos:topConceptOf edintkos:PublicServicesType .
+
+#################################################################
+# Seguridad y emergencias
+#################################################################
+
+edintkossertype:policiaLocal
+    a skos:Concept ;
+    skos:prefLabel "Policía local"@es ;
+    skos:broader edintkossertype:seguridadEmergencias ;
+    skos:inScheme edintkos:PublicServicesType .
+
+edintkossertype:bomberos
+    a skos:Concept ;
+    skos:prefLabel "Bomberos"@es ;
+    skos:broader edintkossertype:seguridadEmergencias ;
+    skos:inScheme edintkos:PublicServicesType .
+
+edintkossertype:proteccionCivil
+    a skos:Concept ;
+    skos:prefLabel "Protección civil"@es ;
+    skos:broader edintkossertype:seguridadEmergencias ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Residuos y limpieza urbana
+#################################################################
+
+edintkossertype:recogidaBasura
+    a skos:Concept ;
+    skos:prefLabel "Recogida de basura"@es ;
+    skos:broader edintkossertype:residuosLimpiezaUrbana ;
+    skos:inScheme edintkos:PublicServicesType .
+
+edintkossertype:recogidaResiduos
+    a skos:Concept ;
+    skos:prefLabel "Recogida de residuos"@es ;
+    skos:broader edintkossertype:residuosLimpiezaUrbana ;
+    skos:inScheme edintkos:PublicServicesType .
+
+edintkossertype:gestionTratamientoResiduos
+    a skos:Concept ;
+    skos:prefLabel "Gestión y tratamiento de residuos"@es ;
+    skos:broader edintkossertype:residuosLimpiezaUrbana ;
+    skos:inScheme edintkos:PublicServicesType .
+
+edintkossertype:gestionResiduosPeligrosos
+    a skos:Concept ;
+    skos:prefLabel "Gestión de residuos peligrosos"@es ;
+    skos:broader edintkossertype:residuosLimpiezaUrbana ;
+    skos:inScheme edintkos:PublicServicesType .
+
+edintkossertype:limpiezaViaria
+    a skos:Concept ;
+    skos:prefLabel "Limpieza viaria"@es ;
+    skos:broader edintkossertype:residuosLimpiezaUrbana ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Agua y saneamiento
+#################################################################
+
+edintkossertype:abastecimientoAgua
+    a skos:Concept ;
+    skos:prefLabel "Abastecimiento de agua"@es ;
+    skos:broader edintkossertype:aguaSaneamiento ;
+    skos:inScheme edintkos:PublicServicesType .
+
+edintkossertype:redAbastecimientoAgua
+    a skos:Concept ;
+    skos:prefLabel "Red de abastecimiento de agua"@es ;
+    skos:broader edintkossertype:aguaSaneamiento ;
+    skos:inScheme edintkos:PublicServicesType .
+
+edintkossertype:recogidaTratamientoAguasResiduales
+    a skos:Concept ;
+    skos:prefLabel "Recogida y tratamiento de aguas residuales"@es ;
+    skos:broader edintkossertype:aguaSaneamiento ;
+    skos:inScheme edintkos:PublicServicesType .
+
+edintkossertype:descontaminacion
+    a skos:Concept ;
+    skos:prefLabel "Descontaminación"@es ;
+    skos:broader edintkossertype:aguaSaneamiento ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Servicios sociales
+#################################################################
+
+edintkossertype:ayudaDomicilio
+    a skos:Concept ;
+    skos:prefLabel "Ayuda a domicilio"@es ;
+    skos:broader edintkossertype:serviciosSociales ;
+    skos:inScheme edintkos:PublicServicesType .
+
+:teleasistencia
+    a skos:Concept ;
+    skos:prefLabel "Teleasistencia"@es ;
+    skos:broader edintkossertype:serviciosSociales ;
+    skos:inScheme edintkos:PublicServicesType .
+
+:atencionPoblacionVulnerable
+    a skos:Concept ;
+    skos:prefLabel "Atención a población vulnerable"@es ;
+    skos:broader edintkossertype:serviciosSociales ;
+    skos:inScheme edintkos:PublicServicesType .
+
+:violenciaGenero
+    a skos:Concept ;
+    skos:prefLabel "Atención a víctimas de violencia de género"@es ;
+    skos:broader edintkossertype:serviciosSociales ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Atención ciudadana
+#################################################################
+
+:atencionTelefonica
+    a skos:Concept ;
+    skos:prefLabel "Atención telefónica"@es ;
+    skos:broader edintkossertype:atencionCiudadana ;
+    skos:inScheme edintkos:PublicServicesType .
+
+:atencionTelematica
+    a skos:Concept ;
+    skos:prefLabel "Atención telemática"@es ;
+    skos:broader edintkossertype:atencionCiudadana ;
+    skos:inScheme edintkos:PublicServicesType .
+
+:registroGeneral
+    a skos:Concept ;
+    skos:prefLabel "Registro general"@es ;
+    skos:broader edintkossertype:atencionCiudadana ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Movilidad y transporte
+#################################################################
+
+:transportePublico
+    a skos:Concept ;
+    skos:prefLabel "Transporte público"@es ;
+    skos:broader edintkossertype:movilidadTransporte ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Alumbrado público
+#################################################################
+
+:gestionAlumbradoPublico
+    a skos:Concept ;
+    skos:prefLabel "Gestión del alumbrado público"@es ;
+    skos:broader edintkossertype:alumbradoPublico ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Mantenimiento urbano y vía pública
+#################################################################
+
+:mantenimientoViales
+    a skos:Concept ;
+    skos:prefLabel "Mantenimiento de viales"@es ;
+    skos:broader edintkossertype:mantenimientoUrbano ;
+    skos:inScheme edintkos:PublicServicesType .
+
+:mantenimientoEspaciosPublicos
+    a skos:Concept ;
+    skos:prefLabel "Mantenimiento de espacios públicos"@es ;
+    skos:broader edintkossertype:mantenimientoUrbano ;
+    skos:inScheme edintkos:PublicServicesType .
+
+:urgenciasViaPublica
+    a skos:Concept ;
+    skos:prefLabel "Atención de urgencias en vía pública"@es ;
+    skos:broader edintkossertype:mantenimientoUrbano ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Edificios y dependencias municipales
+#################################################################
+
+:limpiezaEdificiosMunicipales
+    a skos:Concept ;
+    skos:prefLabel "Limpieza de edificios y dependencias municipales"@es ;
+    skos:broader edintkossertype:edificiosDependenciasMunicipales ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Administración general
+#################################################################
+
+:secretaria
+    a skos:Concept ;
+    skos:prefLabel "Secretaría"@es ;
+    skos:broader edintkossertype:administracionGeneral ;
+    skos:inScheme edintkos:PublicServicesType .
+
+:intervencion
+    a skos:Concept ;
+    skos:prefLabel "Intervención"@es ;
+    skos:broader edintkossertype:administracionGeneral ;
+    skos:inScheme edintkos:PublicServicesType .
+
+:tesoreria
+    a skos:Concept ;
+    skos:prefLabel "Tesorería"@es ;
+    skos:broader edintkossertype:administracionGeneral ;
+    skos:inScheme edintkos:PublicServicesType .
+
+:unidadesAdministrativas
+    a skos:Concept ;
+    skos:prefLabel "Unidades administrativas"@es ;
+    skos:broader edintkossertype:administracionGeneral ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Urbanismo y obras
+#################################################################
+
+:servicioObras
+    a skos:Concept ;
+    skos:prefLabel "Servicio de obras"@es ;
+    skos:broader edintkossertype:urbanismoObras ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Servicios funerarios y cementerio
+#################################################################
+
+:serviciosFunerarios
+    a skos:Concept ;
+    skos:prefLabel "Servicios funerarios"@es ;
+    skos:broader edintkossertype:serviciosFunerariosCementerio ;
+    skos:inScheme edintkos:PublicServicesType .
+
+:cementerio
+    a skos:Concept ;
+    skos:prefLabel "Cementerio"@es ;
+    skos:broader :serviciosFunerariosCementerio ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Protección animal
+#################################################################
+
+:atencionProteccionAnimales
+    a skos:Concept ;
+    skos:prefLabel "Atención y protección de animales"@es ;
+    skos:broader edintkossertype:proteccionAnimal ;
+    skos:inScheme edintkos:PublicServicesType .
+
+#################################################################
+# Tecnologías de la información
+#################################################################
+
+:servicioInformatica
+    a skos:Concept ;
+    skos:prefLabel "Servicio de informática"@es ;
+    skos:broader edintkossertype:tecnologiasInformacion ;
+    skos:inScheme edintkos:PublicServicesType .

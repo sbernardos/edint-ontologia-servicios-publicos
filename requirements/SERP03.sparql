@@ -1,0 +1,23 @@
+# SERP03: ¿Qué procedimientos administrativos están asociados a cada servicio público?
+
+PREFIX serpub: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicios-publicos#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?servicioPublico ?etiquetaServicio ?procedimiento ?etiquetaProcedimiento
+WHERE {
+  ?servicioPublico a serpub:PublicService ;
+                   serpub:hasAdministrativeProcedure ?procedimiento .
+
+  ?procedimiento a serpub:AdministrativeProcedure .
+
+  OPTIONAL {
+    ?servicioPublico rdfs:label ?etiquetaServicio .
+    FILTER(LANG(?etiquetaServicio) = "es")
+  }
+
+  OPTIONAL {
+    ?procedimiento rdfs:label ?etiquetaProcedimiento .
+    FILTER(LANG(?etiquetaProcedimiento) = "es")
+  }
+}
+ORDER BY ?etiquetaServicio ?etiquetaProcedimiento

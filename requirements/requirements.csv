@@ -1,0 +1,12 @@
+Identifier,Responsible partner,Version,"Competency Question /
+ Natural language sentence (fact)",Answer (For Competency Questions),"Status (Proposed, Accepted, Rejected, Deprecated)",Comments (optional),Extracted from (provenance),"Priority 
+(High, Medium, Low) (optional)",Relation with other requirements (optional),Associated ontology elements,Relation to ontology elements in other domains
+SERP01,UPM,0.1.0,¿Cuál es el identificador de cada servicio público?,,Proposed,,,,,,
+SERP02,UPM,0.1.0,¿A qué tipo pertenece cada servicio público?,,Proposed,,,,,,
+SERP03,UPM,0.1.0,¿Qué procedimientos administrativos están asociados a cada servicio público?,,Proposed,,,,,,
+SERP04,UPM,0.1.0,¿Cuál es el estado actual de cada procedimiento administrativo?,,Proposed,,,,,,
+SERP05,UPM,0.1.0,¿Cuál es el periodo esperado de resolución de cada procedimiento administrativo?,,Proposed,,,,,,
+SERP06,UPM,0.1.0,¿Qué organización pública es la autoridad competente de cada servicio público?,,Proposed,,,,,,
+SERP07,UPM,0.1.0,¿Qué punto de contacto está disponible para cada servicio público?,,Proposed,,,,,,
+SERP08,UPM,0.1.0,¿Qué servicios públicos son responsabilidad de una organización pública concreta?,,Proposed,,,,,,
+SERP09,UPM,0.1.0,¿Qué reglas sigue cada servicio público?,,,,,,,,

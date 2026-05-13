@@ -1,0 +1,10 @@
+# SERP01: ¿Cuál es el identificador de cada servicio público?
+
+PREFIX serpub: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicios-publicos#>
+
+SELECT ?servicioPublico ?identificador
+WHERE {
+  ?servicioPublico a serpub:PublicService ;
+                   serpub:identifier ?identificador .
+}
+ORDER BY ?servicioPublico

@@ -1,0 +1,24 @@
+# SERP09: ¿Qué reglas sigue cada servicio público?
+
+PREFIX serpub: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicios-publicos#>
+PREFIX cpsv: <http://purl.org/vocab/cpsv#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?servicioPublico ?etiquetaServicio ?regla ?etiquetaRegla
+WHERE {
+  ?servicioPublico a serpub:PublicService ;
+                   cpsv:follows ?regla .
+
+  ?regla a cpsv:Rule .
+
+  OPTIONAL {
+    ?servicioPublico rdfs:label ?etiquetaServicio .
+    FILTER(LANG(?etiquetaServicio) = "es")
+  }
+
+  OPTIONAL {
+    ?regla rdfs:label ?etiquetaRegla .
+    FILTER(LANG(?etiquetaRegla) = "es")
+  }
+}
+ORDER BY ?etiquetaServicio ?etiquetaRegla

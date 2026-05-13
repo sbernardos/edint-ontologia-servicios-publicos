@@ -1,0 +1,21 @@
+# SERP07: ¿Qué punto de contacto está disponible para cada servicio público?
+
+PREFIX serpub: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicios-publicos#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?servicioPublico ?etiquetaServicio ?puntoContacto ?etiquetaPuntoContacto
+WHERE {
+  ?servicioPublico a serpub:PublicService ;
+                   serpub:hasContactPoint ?puntoContacto .
+
+  OPTIONAL {
+    ?servicioPublico rdfs:label ?etiquetaServicio .
+    FILTER(LANG(?etiquetaServicio) = "es")
+  }
+
+  OPTIONAL {
+    ?puntoContacto rdfs:label ?etiquetaPuntoContacto .
+    FILTER(LANG(?etiquetaPuntoContacto) = "es")
+  }
+}
+ORDER BY ?etiquetaServicio

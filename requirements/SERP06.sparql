@@ -1,0 +1,24 @@
+# SERP06: ¿Qué organización pública es la autoridad competente de cada servicio público?
+
+PREFIX serpub: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicios-publicos#>
+PREFIX m8g: <http://data.europa.eu/m8g/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?servicioPublico ?etiquetaServicio ?organizacionPublica ?etiquetaOrganizacion
+WHERE {
+  ?servicioPublico a serpub:PublicService ;
+                   serpub:hasCompetentAuthority ?organizacionPublica .
+
+  ?organizacionPublica a m8g:PublicOrganisation .
+
+  OPTIONAL {
+    ?servicioPublico rdfs:label ?etiquetaServicio .
+    FILTER(LANG(?etiquetaServicio) = "es")
+  }
+
+  OPTIONAL {
+    ?organizacionPublica rdfs:label ?etiquetaOrganizacion .
+    FILTER(LANG(?etiquetaOrganizacion) = "es")
+  }
+}
+ORDER BY ?etiquetaOrganizacion ?etiquetaServicio

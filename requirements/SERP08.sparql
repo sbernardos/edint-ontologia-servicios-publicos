@@ -1,0 +1,16 @@
+# SERP08: ¿Qué servicios públicos son responsabilidad de una organización pública concreta?
+
+PREFIX serpub: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicios-publicos#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?servicioPublico ?etiquetaServicio
+WHERE {
+  ?servicioPublico a serpub:PublicService ;
+                   serpub:hasCompetentAuthority <http://example.org/resource/public-organization/AyuntamientoMadrid> .
+
+  OPTIONAL {
+    ?servicioPublico rdfs:label ?etiquetaServicio .
+    FILTER(LANG(?etiquetaServicio) = "es")
+  }
+}
+ORDER BY ?etiquetaServicio

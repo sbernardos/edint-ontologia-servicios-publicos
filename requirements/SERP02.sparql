@@ -1,0 +1,18 @@
+# SERP02: ¿A qué tipo pertenece cada servicio público?
+
+PREFIX serpub: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicios-publicos#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?servicioPublico ?tipoServicio ?etiquetaTipoServicio
+WHERE {
+  ?servicioPublico a serpub:PublicService ;
+                   serpub:typePublicService ?tipoServicio .
+
+  ?tipoServicio skos:inScheme <http://vocab.linkeddata.es/datosabiertos/kos/edint/PublicServices> .
+
+  OPTIONAL {
+    ?tipoServicio skos:prefLabel ?etiquetaTipoServicio .
+    FILTER(LANG(?etiquetaTipoServicio) = "es")
+  }
+}
+ORDER BY ?servicioPublico ?etiquetaTipoServicio
