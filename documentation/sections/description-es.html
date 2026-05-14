@@ -1,0 +1,54 @@
+<h2 id="desc" class="list">Ontología de Servicios Públicos: Descripción <span class="backlink"> volver al <a href="#toc">índice</a></span></h2>
+<span class="markdown">
+<p>La Figura 1 muestra el modelo conceptual general de la Ontología de Servicios Públicos.</p>
+<p><center><img src="../diagrams/diagram.png"/><figcaption>
+Figura 1. Modelo conceptual principal de la Ontología de Servicios Públicos</figcaption></center></p> 
+
+La ontología proporciona un modelo conceptual para describir servicios públicos y procedimientos administrativos ofrecidos por administraciones locales. Su objetivo es apoyar la publicación armonizada de información sobre servicios municipales, procedimientos, requisitos, documentación, organizaciones responsables e interacciones administrativas.<br><br>
+
+El modelo reutiliza y extiende el <a href="https://semiceu.github.io/CPSV-AP/releases/3.0.0">Core Public Service Vocabulary (CPSV)</a>, un vocabulario diseñado para describir servicios públicos de forma estructurada e interoperable. Siguiendo el patrón de CPSV, la ontología representa un servicio público como una actividad o función prestada por una organización pública en respuesta a las necesidades de la ciudadanía, las empresas u otros agentes. Los procedimientos administrativos se representan como procesos formales asociados al acceso, solicitud, gestión o resolución de dichos servicios.<br>
+<br>
+
+La ontología también reutiliza elementos del <a href="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicio/index-es.html">Vocabulario para la representación de trámites, servicios y procedimientos administrativos ofrecidos por un ayuntamiento</a>, que también importa CPSV y fue desarrollado para describir servicios municipales y procedimientos administrativos. En particular, esta ontología reutiliza la clase <a href="https://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicio/index-en.html#DestinadoProcedimiento"><code>DestinadoProcedimiento</code></a> para representar la entidad destinataria de un servicio público.<br><br>
+
+Los principales elementos conceptuales de la ontología incluyen:<br>
+
+- <a href="#PublicService">Servicio público</a>: representa un servicio prestado por una administración pública, como la recogida de residuos, la atención ciudadana, los servicios urbanísticos o los servicios sociales.<br>
+- <a href="#AdministrativeProcedure">Procedimiento administrativo</a>: representa un proceso administrativo formal mediante el cual una persona u organización interactúa con la administración, por ejemplo para presentar una solicitud, pedir una licencia, inscribir información, pagar una tasa, obtener un certificado o presentar una queja.<br>
+- <a href="#PublicOrganisation">Organización pública</a>: representa el organismo, departamento o unidad administrativa responsable de prestar un servicio o gestionar un procedimiento.<br>
+- <a href="#Input">Entrada</a>: representa la información, formularios o documentos que deben aportarse para iniciar o completar un procedimiento.<br>
+- <a href="#Output">Salida</a>: representa el resultado producido por un procedimiento, como una autorización, licencia, certificado, resolución o inscripción registral.<br>
+- <a href="#Rule">Regla</a>: representa el marco legal, normativo o administrativo que regula la prestación de un servicio o la ejecución de un procedimiento.<br><br>
+
+Además de estas clases principales, la ontología puede complementarse con vocabularios controlados para clasificar tipos de servicios públicos y tipos de procedimientos administrativos. Estos vocabularios controlados permiten diferenciar entre el ámbito del servicio, como seguridad pública, gestión de residuos, abastecimiento de agua o mantenimiento urbano, y el tipo de interacción administrativa, como solicitud, comunicación, declaración responsable, autorización, inscripción, pago, queja o recurso.<br>
+
+
+<pre><textarea style="resize:none" readonly id="code1" name="code" rows="25" cols="100">
+@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
+@prefix cpsv: &lt;http://purl.org/vocab/cpsv#&gt; .
+@prefix cv: &lt;http://data.europa.eu/m8g/&gt; .
+@prefix schema: &lt;http://schema.org/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+@prefix edintserv: &lt;http://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicio#&gt; .
+@prefix edintkos: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/&gt; .
+@prefix edintpublicservice: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/PublicServicesType/&gt; .
+@prefix edintproceduretype: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/AdministrativeProcedureType/&gt; .
+@prefix edintrec: &lt;http://vocab.linkeddata.es/datosabiertos/recurso/&gt; .
+
+# Servicio público
+edintrec:servicio/atencion-ciudadana
+    a cpsv:PublicService ;
+    dct:title "Atención ciudadana"@es ;
+    dct:description "Servicio municipal de información, orientación y atención a la ciudadanía."@es ;
+    edintserv:hasPublicServiceType edintpublicservice:atencionCiudadana ;
+    cpsv:follows edintrec:normativa/reglamento-atencion-ciudadana ;
+    cpsv:hasInput edintrec:input/formulario-solicitud-general ;
+    cpsv:produces edintrec:output/respuesta-administrativa ;
+    cv:ownedBy edintrec:organizacion/ayuntamiento-madrid .
+
+
+</textarea></pre>
+
+</span>

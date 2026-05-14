@@ -1,0 +1,108 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintkosproctype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/AdministrativeProcedureType/> .
+
+
+#################################################################
+# Concept scheme
+#################################################################
+
+edintkos:AdministrativeProcedureType
+    a skos:ConceptScheme ;
+    dct:issued "2026-05-14"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    skos:prefLabel "Tipos de procedimientos administrativos"@es ;
+    skos:prefLabel "Administrative procedure types"@en ;
+    dct:title "Esquema de conceptos para clasificar tipos de procedimientos administrativos"@es ;
+    dct:description "Vocabulario controlado básico para clasificar procedimientos administrativos ofrecidos por una administración pública."@es ;
+    skos:hasTopConcept
+        edintkosproctype:solicitud ,
+        edintkosproctype:comunicacion ,
+        edintkosproctype:declaracionResponsable ,
+        edintkosproctype:autorizacionLicencia ,
+        edintkosproctype:inscripcionRegistro ,
+        edintkosproctype:pagoTributo ,
+        edintkosproctype:quejaReclamacion ,
+        edintkosproctype:recursoAlegacion ,
+        edintkosproctype:certificado .
+
+
+#################################################################
+# Top concepts
+#################################################################
+
+edintkosproctype:solicitud
+    a skos:Concept ;
+    skos:prefLabel "Solicitud"@es ;
+    skos:prefLabel "Application"@en ;
+    skos:definition "Procedimiento mediante el cual una persona solicita a la administración un servicio, una prestación, una autorización o una actuación administrativa."@es ;
+    skos:inScheme edintkos:AdministrativeProcedureType ;
+    skos:topConceptOf edintkos:AdministrativeProcedureType .
+
+edintkosproctype:comunicacion
+    a skos:Concept ;
+    skos:prefLabel "Comunicación"@es ;
+    skos:prefLabel "Notification"@en ;
+    skos:definition "Procedimiento mediante el cual una persona comunica a la administración determinados hechos, datos o actuaciones."@es ;
+    skos:inScheme edintkos:AdministrativeProcedureType ;
+    skos:topConceptOf edintkos:AdministrativeProcedureType .
+
+edintkosproctype:declaracionResponsable
+    a skos:Concept ;
+    skos:prefLabel "Declaración responsable"@es ;
+    skos:prefLabel "Responsible declaration"@en ;
+    skos:definition "Procedimiento mediante el cual una persona declara que cumple los requisitos establecidos para iniciar una actividad, ejercer un derecho o acceder a una prestación."@es ;
+    skos:inScheme edintkos:AdministrativeProcedureType ;
+    skos:topConceptOf edintkos:AdministrativeProcedureType .
+
+edintkosproctype:autorizacionLicencia
+    a skos:Concept ;
+    skos:prefLabel "Autorización o licencia"@es ;
+    skos:prefLabel "Authorisation or licence"@en ;
+    skos:definition "Procedimiento mediante el cual la administración autoriza o permite una actividad, uso, obra o actuación."@es ;
+    skos:inScheme edintkos:AdministrativeProcedureType ;
+    skos:topConceptOf edintkos:AdministrativeProcedureType .
+
+edintkosproctype:inscripcionRegistro
+    a skos:Concept ;
+    skos:prefLabel "Inscripción en registro"@es ;
+    skos:prefLabel "Registry inscription"@en ;
+    skos:definition "Procedimiento orientado a inscribir, modificar o dar de baja información en un registro administrativo."@es ;
+    skos:inScheme edintkos:AdministrativeProcedureType ;
+    skos:topConceptOf edintkos:AdministrativeProcedureType .
+
+edintkosproctype:pagoTributo
+    a skos:Concept ;
+    skos:prefLabel "Pago, tasa o tributo"@es ;
+    skos:prefLabel "Payment, fee or tax"@en ;
+    skos:definition "Procedimiento relacionado con el pago o gestión de tasas, impuestos, precios públicos u otros ingresos públicos."@es ;
+    skos:inScheme edintkos:AdministrativeProcedureType ;
+    skos:topConceptOf edintkos:AdministrativeProcedureType .
+
+edintkosproctype:quejaReclamacion
+    a skos:Concept ;
+    skos:prefLabel "Queja o reclamación"@es ;
+    skos:prefLabel "Complaint or claim"@en ;
+    skos:definition "Procedimiento mediante el cual una persona presenta una queja, reclamación, aviso o incidencia ante la administración."@es ;
+    skos:inScheme edintkos:AdministrativeProcedureType ;
+    skos:topConceptOf edintkos:AdministrativeProcedureType .
+
+edintkosproctype:recursoAlegacion
+    a skos:Concept ;
+    skos:prefLabel "Recurso o alegación"@es ;
+    skos:prefLabel "Appeal or allegation"@en ;
+    skos:definition "Procedimiento mediante el cual una persona presenta alegaciones, interpone un recurso o solicita la revisión de una actuación administrativa."@es ;
+    skos:inScheme edintkos:AdministrativeProcedureType ;
+    skos:topConceptOf edintkos:AdministrativeProcedureType .
+
+edintkosproctype:certificado
+    a skos:Concept ;
+    skos:prefLabel "Certificado o justificante"@es ;
+    skos:prefLabel "Certificate or proof document"@en ;
+    skos:definition "Procedimiento orientado a solicitar, emitir o descargar certificados, justificantes, volantes u otros documentos acreditativos."@es ;
+    skos:inScheme edintkos:AdministrativeProcedureType ;
+    skos:topConceptOf edintkos:AdministrativeProcedureType .
