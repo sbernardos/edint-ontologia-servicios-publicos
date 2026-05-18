@@ -43,36 +43,14 @@
     cv:hasChannel <http://vocab.linkeddata.es/datosabiertos/recurso/canal/CanalSedeElectronicaUrbanismo> ;
     cv:hasChannel <http://vocab.linkeddata.es/datosabiertos/recurso/canal/CanalOficinaAtencionCiudadana> ;
 
-    # Destinatario
-    dcterms:audience <http://vocab.linkeddata.es/datosabiertos/recurso/destinatario/Ciudadania> ;
-
-    # Entradas
-    cpsv:hasInput <http://vocab.linkeddata.es/datosabiertos/recurso/entrada/FormularioSolicitudObraMenor> ;
-    cpsv:hasInput <http://vocab.linkeddata.es/datosabiertos/recurso/entrada/DocumentoIdentificacionSolicitante> ;
-    cpsv:hasInput <http://vocab.linkeddata.es/datosabiertos/recurso/entrada/JustificantePagoTasaUrbanistica> ;
-
-    # Salida
-    cpsv:produces <http://vocab.linkeddata.es/datosabiertos/recurso/salida/LicenciaObraMenor> ;
-
     # Regla aplicable
     cpsv:follows <http://vocab.linkeddata.es/datosabiertos/recurso/regla/OrdenanzaUrbanisticaMunicipal> .
-
-
-
-# Procedimiento administrativo: licencia de obra menor
-<http://vocab.linkeddata.es/datosabiertos/recurso/procedimiento-administrativo/ProcedimientoLicenciaObraMenor>
-    a edintserpub:AdministrativeProcedure ;
-    rdfs:label "Procedimiento de solicitud de licencia de obra menor"@es ;
-    dcterms:description "Procedimiento administrativo mediante el cual se presenta, tramita, evalúa y resuelve una solicitud de licencia de obra menor."@es ;
-    dcterms:identifier "PROC-URB-001" ;
 
     # SKOS skos-AdministrativeProcedures.ttl
     edintserpub:typeProcedure edintkosproctype:autorizacionLicencia ;
 
     edintserpub:resolutionPeriod "P3M"^^xsd:duration ;
-    edintserpub:stateProcedure "Abierto"@es ;
-
-    dcterms:audience <http://vocab.linkeddata.es/datosabiertos/recurso/destinatario/Ciudadania> .
+    edintserpub:stateProcedure "Abierto"@es .
 
 
 
@@ -98,29 +76,6 @@
     rdfs:label "Sede electrónica municipal para trámites urbanísticos"@es ;
     schema:url <https://sede.madrid.es/urbanismo/licencia-obra-menor> ;
     dcterms:description "Canal electrónico para presentar la solicitud de licencia de obra menor y consultar el estado del procedimiento."@es .
-
-
-
-# Entradas del procedimiento de licencia de obra menor
-<http://vocab.linkeddata.es/datosabiertos/recurso/entrada/FormularioSolicitudObraMenor>
-    a cv:Evidence ;
-    rdfs:label "Formulario de solicitud de licencia de obra menor"@es ;
-    dcterms:description "Formulario normalizado que inicia el procedimiento administrativo de licencia de obra menor."@es ;
-    dcterms:identifier "DOC-IN-URB-001" .
-
-<http://vocab.linkeddata.es/datosabiertos/recurso/entrada/JustificantePagoTasaUrbanistica>
-    a cv:Evidence ;
-    rdfs:label "Justificante de pago de la tasa urbanística"@es ;
-    dcterms:description "Documento acreditativo del pago de la tasa asociada a la tramitación de la licencia de obra menor."@es ;
-    dcterms:identifier "DOC-IN-URB-002" .
-
-# Salida del procedimiento de licencia de obra menor
-
-<http://vocab.linkeddata.es/datosabiertos/recurso/salida/LicenciaObraMenor>
-    a cv:Output ;
-    rdfs:label "Licencia de obra menor"@es ;
-    dcterms:description "Resolución administrativa que autoriza la realización de la obra menor solicitada."@es ;
-    dcterms:identifier "OUT-URB-001" .
 
 # Regla aplicable al procedimiento urbanístico
 <http://vocab.linkeddata.es/datosabiertos/recurso/regla/OrdenanzaUrbanisticaMunicipal>
