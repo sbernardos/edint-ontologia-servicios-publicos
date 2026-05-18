@@ -22,29 +22,70 @@ In addition to these core classes, the ontology can be complemented with control
 
 
 <pre><textarea style="resize:none" readonly id="code1" name="code" rows="25" cols="100">
-@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
-@prefix cpsv: &lt;http://purl.org/vocab/cpsv#&gt; .
-@prefix cv: &lt;http://data.europa.eu/m8g/&gt; .
-@prefix schema: &lt;http://schema.org/&gt; .
-@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/servicio-publico/ServicioLicenciaObraMenor&gt;
+    a edintserpub:PublicService ;
+    rdfs:label "Servicio de licencia de obra menor"@es ;
+    dcterms:description "Servicio municipal que permite a la ciudadanía solicitar autorización para realizar obras menores en viviendas, locales o inmuebles dentro del término municipal."@es ;
+    dcterms:identifier "SP-URB-001" ;
 
-@prefix edintserv: &lt;http://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicio#&gt; .
-@prefix edintkos: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/&gt; .
-@prefix edintpublicservice: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/PublicServicesType/&gt; .
-@prefix edintproceduretype: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/AdministrativeProcedureType/&gt; .
-@prefix edintrec: &lt;http://vocab.linkeddata.es/datosabiertos/recurso/&gt; .
+    edintserpub:availability "Disponible durante todo el año a través de la sede electrónica municipal y de la oficina de atención ciudadana."@es ;
 
-# Public service
-edintrec:servicio/atencion-ciudadana
-    a cpsv:PublicService ;
-    dct:title "Atención ciudadana"@es ;
-    dct:description "Servicio municipal de información, orientación y atención a la ciudadanía."@es ;
-    edintserv:hasPublicServiceType edintpublicservice:atencionCiudadana ;
-    cpsv:follows edintrec:normativa/reglamento-atencion-ciudadana ;
-    cpsv:hasInput edintrec:input/formulario-solicitud-general ;
-    cpsv:produces edintrec:output/respuesta-administrativa ;
-    cv:ownedBy edintrec:organizacion/ayuntamiento-madrid .
+    # SKOS skos-PublicServices.ttl
+    edintserpub:typePublicService edintkossertype:servicioObras ;
+
+    # Procedimiento administrativo asociado
+    edintserpub:hasAdministrativeProcedure &lt;http://vocab.linkeddata.es/datosabiertos/recurso/procedimiento-administrativo/ProcedimientoLicenciaObraMenor&gt; ;
+
+    # Área competente
+    edintserpub:hasCompetentAuthority &lt;http://vocab.linkeddata.es/datosabiertos/recurso/area/AreaUrbanismo&gt; ;
+
+    # Punto de contacto
+    cv:contactPoint &lt;http://vocab.linkeddata.es/datosabiertos/recurso/punto-contacto/PuntoContactoUrbanismo&gt; ;
+
+    # Canales
+    cv:hasChannel &lt;http://vocab.linkeddata.es/datosabiertos/recurso/canal/CanalSedeElectronicaUrbanismo&gt; ;
+    cv:hasChannel &lt;http://vocab.linkeddata.es/datosabiertos/recurso/canal/CanalOficinaAtencionCiudadana&gt; ;
+
+    # Regla aplicable
+    cpsv:follows &lt;http://vocab.linkeddata.es/datosabiertos/recurso/regla/OrdenanzaUrbanisticaMunicipal&gt; .
+
+    # SKOS skos-AdministrativeProcedures.ttl
+    edintserpub:typeProcedure edintkosproctype:autorizacionLicencia ;
+
+    edintserpub:resolutionPeriod "P3M"^^xsd:duration ;
+    edintserpub:stateProcedure "Abierto"@es .
+
+
+
+# Organización pública responsable
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/area/AreaUrbanismo&gt;
+    a cpsv:PublicOrganisation;
+    rdfs:label "Área de Urbanismo del Ayuntamiento de Villa Ejemplo"@es ;
+    dcterms:description "Unidad administrativa responsable de gestionar los servicios y procedimientos municipales en materia urbanística."@es ;
+    dcterms:identifier "ORG-URB-001" .
+
+
+# Punto de contacto
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/punto-contacto/PuntoContactoUrbanismo&gt;
+    a cv:ContactPoint ;
+    rdfs:label "Punto de contacto del Área de Urbanismo"@es ;
+    schema:email "urbanismo@madrid.es" ;
+    schema:telephone "+34 900 000 001" ;
+    schema:contactType "Información y tramitación urbanística"@es .
+
+# Canal específico de urbanismo
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/canal/CanalSedeElectronicaUrbanismo&gt;
+    a cv:Channel ;
+    rdfs:label "Sede electrónica municipal para trámites urbanísticos"@es ;
+    schema:url &lt;https://sede.madrid.es/urbanismo/licencia-obra-menor&gt; ;
+    dcterms:description "Canal electrónico para presentar la solicitud de licencia de obra menor y consultar el estado del procedimiento."@es .
+
+# Regla aplicable al procedimiento urbanístico
+&lt;http://vocab.linkeddata.es/datosabiertos/recurso/regla/OrdenanzaUrbanisticaMunicipal&gt;
+    a cpsv:Rule ;
+    rdfs:label "Ordenanza municipal reguladora de actuaciones urbanísticas"@es ;
+    dcterms:description "Norma municipal que regula los requisitos, condiciones y documentación aplicables a la tramitación de licencias urbanísticas."@es ;
+    dcterms:identifier "RULE-URB-001" .
 
 </textarea></pre>
 
