@@ -1,0 +1,79 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann:  <http://purl.org/vocab/vann#> .
+@prefix edintserpub: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/servicios-publicos#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#e3c6c05e77fe2bcf15500859f4dbc08a> , <https://astrea.linkeddata.es/shapes#0c61be561e5a00278d72dfc58ee84510> , <https://astrea.linkeddata.es/shapes#adf5286c42c68f7dfe7c3a56de046a4b> , <https://astrea.linkeddata.es/shapes#9747ef62a4bf1aaa00736e1a44e32455> , <https://astrea.linkeddata.es/shapes#7d482eb871622dc4066b4b983184ab78> , <https://astrea.linkeddata.es/shapes#b1505571165a86d6860ddd2f4517c31f> , <https://astrea.linkeddata.es/shapes#116c80d5e52aa1c94bc3d0064c2c7743> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#0c61be561e5a00278d72dfc58ee84510>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.europa.eu/m8g> ;
+        rdfs:label        "has Channel"@en , "It links the Public Service to any Channel through which an Agent provides, uses or otherwise interacts with the Public Service, such as an online service, phone number or office."@en ;
+        sh:description    "It links the Public Service to any Channel through which an Agent provides, uses or otherwise interacts with the Public Service, such as an online service, phone number or office."@en ;
+        sh:name           "has Channel"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.europa.eu/m8g/hasChannel> .
+
+<https://astrea.linkeddata.es/shapes#e3c6c05e77fe2bcf15500859f4dbc08a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.europa.eu/m8g> ;
+        rdfs:label        "fulfils"@en , "The Rules that the requirements fulfil"@en ;
+        sh:description    "The Rules that the requirements fulfil"@en ;
+        sh:name           "fulfils"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.europa.eu/m8g/fulfils> .
+
+<https://astrea.linkeddata.es/shapes#b1505571165a86d6860ddd2f4517c31f>
+        a               sh:PropertyShape ;
+        rdfs:label      "tiene Procedimiento Administrativo"@es , "Relaciona un servicio público con el procedimiento administrativo mediante el cual se gestiona, tramita o resuelve."@es , "Relates a public service to the administrative procedure through which it is managed, processed, or resolved."@en , "has Administrative Procedure"@en ;
+        sh:class        edintserpub:AdministrativeProcedure ;
+        sh:description  "Relates a public service to the administrative procedure through which it is managed, processed, or resolved."@en , "Relaciona un servicio público con el procedimiento administrativo mediante el cual se gestiona, tramita o resuelve."@es ;
+        sh:name         "has Administrative Procedure"@en , "tiene Procedimiento Administrativo"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         edintserpub:hasAdministrativeProcedure .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "[line: 120, col: 1 ] Undefined prefix: \n" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "206"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#7d482eb871622dc4066b4b983184ab78>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#9747ef62a4bf1aaa00736e1a44e32455>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.europa.eu/m8g/cpsvap/3.2.0> ;
+        rdfs:label        "follows"@en , "It links a Public Service to the Rule(s) under which it operates."@en ;
+        sh:description    "It links a Public Service to the Rule(s) under which it operates."@en ;
+        sh:name           "follows"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/vocab/cpsv#follows> .
+
+<https://astrea.linkeddata.es/shapes#116c80d5e52aa1c94bc3d0064c2c7743>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b1505571165a86d6860ddd2f4517c31f> ;
+        sh:targetClass  edintserpub:PublicService .
+
+<https://astrea.linkeddata.es/shapes#adf5286c42c68f7dfe7c3a56de046a4b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.europa.eu/m8g> ;
+        rdfs:label        "is classified by"@en , "It allows to classify the Public Service with any Concept other than those already foreseen and defined explicitly in the CPSV-AP (Thematic Area, Sector, etc.)."@en ;
+        sh:description    "It allows to classify the Public Service with any Concept other than those already foreseen and defined explicitly in the CPSV-AP (Thematic Area, Sector, etc.)."@en ;
+        sh:name           "is classified by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.europa.eu/m8g/isClassifiedBy> .
